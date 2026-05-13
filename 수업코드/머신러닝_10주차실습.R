@@ -49,6 +49,15 @@ convert_type <- function(x) {
 group_under_num <- convert_type(group_under)
 group_over_num  <- convert_type(group_over)
 
+#박스플롯
+ggplot(z_df2, aes(x = value, y = variable)) + 
+  geom_boxplot(fill = c("lightblue", "lightgreen"),
+               outlier.color = "red") + 
+  coord_flip()+
+  labs(title = "Boxplot of Two Variable") +
+  xlab("variable") +
+  ylab("value")
+
 # 표준편차 계산
 sd_under <- sd(group_under_num)
 sd_over  <- sd(group_over_num)
