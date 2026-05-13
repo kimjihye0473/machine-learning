@@ -65,13 +65,9 @@ sd_over  <- sd(group_over_num)
 # Z-test 수행
 library(BSDA)
 
-z_result <- z.test(
-  x = group_under_num,
-  y = group_over_num,
-  sigma.x = sd_under,
-  sigma.y = sd_over,
-  alternative = "two.sided"
-)
+z_result <- z.test( x = group_under_num, y = group_over_num,
+                   sigma.x = sd_under,sigma.y = sd_over,
+                   alternative = "two.sided")
 
 # 결과 출력
 z_result
